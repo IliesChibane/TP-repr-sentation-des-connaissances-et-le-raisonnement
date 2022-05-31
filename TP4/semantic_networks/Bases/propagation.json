@@ -1,0 +1,382 @@
+{
+    "nodes":[
+    {
+            "id":"c720bd2f-5a0e-4013-b307-c2385e378b73",
+            "x":34,
+            "y":-106,
+            "label":"Modes de Representations des connaissances"
+    },
+
+    {
+            "id":"88b77cfa-8872-4533-af20-dbbc4bc14e15",
+            "x":-284,
+            "y":-264,
+            "label":"Reiter"
+    },
+
+    {
+            "id":"c19194c6-6f1b-4051-b948-fa362351e2bd",
+            "x":221,
+            "y":-226,
+            "label":"Axe-IA"
+    },
+
+    {
+            "id":"958e48e7-c715-45a0-ad52-c46a7d7c8d8a",
+            "x":-299,
+            "y":-54,
+            "label":"Modes Logiques"
+    },
+
+    {
+            "id":"d3d13d91-bc21-40b6-ae37-892668e3c819",
+            "x":71,
+            "y":-51,
+            "label":"Modes Graphiques"
+    },
+
+    {
+            "id":"a029534b-7efd-4c7f-ac10-0865e3404081",
+            "x":-323,
+            "y":64,
+            "label":"Logiques Classiques"
+    },
+
+    {
+            "id":"45d495c4-6564-4f74-a891-492a07852e9a",
+            "x":-166,
+            "y":62,
+            "label":"Logiques Non classiques"
+    },
+
+    {
+        "id":"bb8c6ca1-c382-42b9-b098-a93dcaccae90",
+        "x":-368,
+        "y":169,
+        "label":"Logique D ordre 1"
+    },
+
+    {
+        "id":"2e15b502-93eb-4ca2-8fda-81f8a3e787cb",
+        "x":-259,
+        "y":179,
+        "label":"Logique D ordre 0"
+    },
+
+    {
+        "id":"8d04adba-97cf-4908-98ce-473d8ff32c5e",
+        "x":-37,
+        "y":148,
+        "label":"Logique Modale"
+    },
+
+    {
+        "id":"fc427295-2fb2-4c51-b25e-92d3c8d2af5a",
+        "x":45,
+        "y":100,
+        "label":"Logique Des defauts"
+    },
+
+    {
+        "id":"fd9ff305-396b-4cf0-9448-6cd1556c863f",
+        "x":226,
+        "y":137,
+        "label":"Logiques De description"
+    }
+    ,
+    {
+        "id":"82816208-19f3-4172-a9aa-ec69f812aa8c",
+        "x":-402,
+        "y":242,
+        "label":"Axiome A4"
+    }
+    ,
+    {
+        "id":"e4366c72-2154-41ce-8fd9-41414c0c6d89",
+        "x":-93,
+        "y":265,
+        "label":"Systeme T"
+    }
+    ,
+    {
+        "id":"626dcebc-4ee4-4e4d-a96e-e859639d1a71",
+        "x":0,
+        "y":222,
+        "label":"Systeme D"
+    }
+    ,
+    {
+        "id":"cb556765-0a3e-4077-b947-8676324e4d2d",
+        "x":103,
+        "y":247,
+        "label":"Systeme S5"
+    }
+    ,
+    {
+        "id":"d089b5bb-c7c5-4707-85db-6d6cc4050025",
+        "x":-46,
+        "y":324,
+        "label":"Axiome A7"
+    }
+    ,
+    {
+        "id":"493a287a-8675-4b7e-8bc7-b65909e67c99",
+        "x":48,
+        "y":342,
+        "label":"a ->a"
+    }
+    ,
+    {
+        "id":"264b1e4c-8902-4918-8d95-67c7a6bd190e",
+        "x":253.1025893777278,
+        "y":-186.00253051992172,
+        "label":"Reseaux Semantique"
+    }
+    ,
+    {
+        "id":"1fdacd86-1cb0-4e20-899d-807ac3ff08ad",
+        "x":302.2495071344589,
+        "y":-291.4885979002226,
+        "label":"Reseaux Bayesiens"
+    }],
+    
+    "edges":[{
+        "from":"958e48e7-c715-45a0-ad52-c46a7d7c8d8a",
+        "to":"c720bd2f-5a0e-4013-b307-c2385e378b73",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"7fac2d10-fb9f-4ef6-827f-ec292b3d8f90"
+    }
+    ,
+    {
+        "from":"d3d13d91-bc21-40b6-ae37-892668e3c819",
+        "to":"c720bd2f-5a0e-4013-b307-c2385e378b73",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"08a3af6e-7ed4-42aa-964f-2a108127559c"
+    }
+    ,
+    {
+        "from":"a029534b-7efd-4c7f-ac10-0865e3404081",
+        "to":"958e48e7-c715-45a0-ad52-c46a7d7c8d8a",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"19e774a4-f997-4938-852b-5a822688265b"
+    }
+    ,
+    {
+        "from":"bb8c6ca1-c382-42b9-b098-a93dcaccae90",
+        "to":"a029534b-7efd-4c7f-ac10-0865e3404081",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"a9508c22-8a87-4478-abe0-38740ef84ea0"
+    }
+    ,
+    {
+        "from":"2e15b502-93eb-4ca2-8fda-81f8a3e787cb",
+        "to":"a029534b-7efd-4c7f-ac10-0865e3404081",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"447b9426-372f-4b5c-807d-f8c33727a4d4"
+    }
+    ,
+    {
+        "from":"45d495c4-6564-4f74-a891-492a07852e9a",
+        "to":"958e48e7-c715-45a0-ad52-c46a7d7c8d8a",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"afb715a0-2df7-48af-a23a-c7aace569995"
+    }
+    ,
+    {
+        "from":"8d04adba-97cf-4908-98ce-473d8ff32c5e",
+        "to":"45d495c4-6564-4f74-a891-492a07852e9a",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"74cc71cc-e90d-45af-9bc5-812f7f02d81c"
+    }
+    ,
+    {
+        "from":"fc427295-2fb2-4c51-b25e-92d3c8d2af5a",
+        "to":"45d495c4-6564-4f74-a891-492a07852e9a",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"e359601e-373b-4fb7-9913-a6b8e2c204a5"
+    }
+    ,
+    {
+        "from":"fd9ff305-396b-4cf0-9448-6cd1556c863f",
+        "to":"45d495c4-6564-4f74-a891-492a07852e9a",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"55bd07f4-8c06-4adb-8e6e-1b87405102a8"
+    }
+    ,
+    {
+        "from":"e4366c72-2154-41ce-8fd9-41414c0c6d89",
+        "to":"8d04adba-97cf-4908-98ce-473d8ff32c5e",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"a793c43b-b03e-4a65-95ab-5258af6eec81"
+    }
+    ,
+    {
+        "from":"cb556765-0a3e-4077-b947-8676324e4d2d",
+        "to":"8d04adba-97cf-4908-98ce-473d8ff32c5e",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"62dbce31-632b-4d9c-af40-c3c6ae7d2127"
+    }
+    ,
+    {
+        "from":"626dcebc-4ee4-4e4d-a96e-e859639d1a71",
+        "to":"8d04adba-97cf-4908-98ce-473d8ff32c5e",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"ac341092-cba0-4760-910b-9eeadc992dcc"
+    }
+    ,
+    {
+        "from":"1fdacd86-1cb0-4e20-899d-807ac3ff08ad",
+        "to":"d3d13d91-bc21-40b6-ae37-892668e3c819",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"2a37a9ee-d3ac-48c5-a327-93bdaf9fb02d"
+    }
+    ,
+    {
+        "from":"264b1e4c-8902-4918-8d95-67c7a6bd190e",
+        "to":"d3d13d91-bc21-40b6-ae37-892668e3c819",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"0e70775f-a999-45c1-88dc-be95ebf29bc6"
+    }
+    ,
+    {
+        "from":"493a287a-8675-4b7e-8bc7-b65909e67c99",
+        "to":"d089b5bb-c7c5-4707-85db-6d6cc4050025",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"f37edf81-8376-419b-acba-0e580684add3"
+    }
+    ,
+    {
+        "from":"cb556765-0a3e-4077-b947-8676324e4d2d",
+        "to":"d089b5bb-c7c5-4707-85db-6d6cc4050025",
+        "label":"contient",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        },
+        "id":"4d1a14e4-1963-4dbf-a38c-d31e3f7c00dc"
+    }
+    ,
+    {
+        "from":"e4366c72-2154-41ce-8fd9-41414c0c6d89",
+        "to":"d089b5bb-c7c5-4707-85db-6d6cc4050025",
+        "label":"contient",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"da461f2b-23a7-441a-b23a-20dc20213994"
+    }
+    ,
+    {
+        "from":"bb8c6ca1-c382-42b9-b098-a93dcaccae90",
+        "to":"82816208-19f3-4172-a9aa-ec69f812aa8c",
+        "label":"contient",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"f3e4bb1a-522f-4c9f-b70e-6a0d40e8245d"
+    }
+    ,
+    {
+        "from":"88b77cfa-8872-4533-af20-dbbc4bc14e15",
+        "to":"c720bd2f-5a0e-4013-b307-c2385e378b73",
+        "label":"a devloppe",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"68f8652e-0c49-48c3-a379-1ecca3419d37"
+    }
+    ,
+    {
+        "from":"c720bd2f-5a0e-4013-b307-c2385e378b73",
+        "to":"c19194c6-6f1b-4051-b948-fa362351e2bd",
+        "label":"is a",
+        "edge_type":"All",
+        "arrows":{
+            "to":true
+        }
+    ,
+        "id":"475399e2-949f-4207-a9d2-531b25f51ee0"
+    }
+    ]
+    }
