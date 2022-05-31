@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://testxyz.org/onto.owl"
+         xmlns="http://testxyz.org/onto.owl#">
+
+<owl:Ontology rdf:about="http://testxyz.org/onto.owl"/>
+
+<owl:ObjectProperty rdf:about="#mange">
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Personne"/>
+  <owl:inverseOf rdf:resource="#mange_par"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enseigne">
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Personne"/>
+  <owl:inverseOf rdf:resource="#enseigne_par"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enseigne_par">
+  <owl:inverseOf rdf:resource="#enseigne"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mange_par">
+  <owl:inverseOf rdf:resource="#mange"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#PartieDe">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Personne">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Aliment">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#University">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Faculty">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:Restriction>
+          <owl:someValuesFrom rdf:resource="#University"/>
+          <owl:onProperty rdf:resource="#PartieDe"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Departement">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#PartieDe"/>
+          <owl:someValuesFrom rdf:resource="#Faculty"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Enseignant">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Personne"/>
+        <owl:Restriction>
+          <owl:allValuesFrom rdf:resource="#Personne"/>
+          <owl:onProperty rdf:resource="#enseigne"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Personne"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Etudiant">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Personne"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#enseigne_par"/>
+          <owl:allValuesFrom rdf:resource="#Enseignant"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Personne"/>
+  <owl:disjointWith rdf:resource="#Enseignant"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mohamed">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Personne"/>
+        <owl:Restriction>
+          <owl:allValuesFrom rdf:resource="#Aliment"/>
+          <owl:onProperty rdf:resource="#mange"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Personne"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Khellaf">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Enseignant"/>
+        <owl:Restriction>
+          <owl:someValuesFrom rdf:resource="#Aliment"/>
+          <owl:onProperty rdf:resource="#mange"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#enseigne"/>
+          <owl:allValuesFrom rdf:resource="#Etudiant"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Personne"/>
+  <rdfs:subClassOf rdf:resource="#Enseignant"/>
+  <owl:disjointWith rdf:resource="#Mohamed"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MalBouffe">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Aliment"/>
+        <owl:Restriction>
+          <owl:someValuesFrom rdf:resource="#Personne"/>
+          <owl:onProperty rdf:resource="#mange_par"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Aliment"/>
+</owl:Class>
+
+<University rdf:about="#university1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</University>
+
+<Etudiant rdf:about="#etudiant1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <mange rdf:resource="#aliment1"/>
+</Etudiant>
+
+<Aliment rdf:about="#aliment1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#MalBouffe"/>
+</Aliment>
+
+<Personne rdf:about="#personne1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Enseignant"/>
+  <enseigne rdf:resource="#etudiant1"/>
+</Personne>
+
+<owl:Thing rdf:about="#thing1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Departement"/>
+  <PartieDe rdf:resource="#thing2"/>
+</owl:Thing>
+
+<owl:Thing rdf:about="#thing2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Faculty"/>
+  <PartieDe rdf:resource="#university1"/>
+</owl:Thing>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#MalBouffe"/>
+    <rdf:Description rdf:about="#Departement"/>
+    <rdf:Description rdf:about="#Faculty"/>
+    <rdf:Description rdf:about="#University"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Personne"/>
+    <rdf:Description rdf:about="#Aliment"/>
+    <rdf:Description rdf:about="#University"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>
