@@ -1,0 +1,22 @@
+
+
+To use the program:
+
+1) Unzip the file PNT.zip
+
+2) Edit the file "PNT/add_pnt_to_path_possmin.m" so it contains
+the correct pathname.
+
+3) Start up Matlab.
+
+4) Type "ver" at the Matlab prompt (">>"). You need Matlab version
+6.0 or newer to run PNT.
+
+5) Type "add_pnt_to_path_possmin" to extend the matlab path
+variable.
+
+6) Type PNT to start the program
+
+7) you can for instance use the already existing network Dag_thsis
+existing in the PNT directory or create your own network as
+explained in chapter 8

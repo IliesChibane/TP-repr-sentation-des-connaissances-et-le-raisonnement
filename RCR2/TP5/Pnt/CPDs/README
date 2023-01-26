@@ -1,0 +1,29 @@
+Conditional Probability Distributions are objects that support the
+following methods (in addition to the constructor)
+
+For junction tree and all other inference engines that use potentials:
+- CPD_to_table
+- CPD_to_cpot
+- CPD_to_cgpot
+
+For sampling and enumeration
+- sample_CPD
+- evaluate_CPD
+
+Children of the discrete_CPD class (i.e., tabular and noisyor) just need to implement CPD_to_CPT
+and can then inherit all of the above methods.
+
+If CPD_to_tables is defined, it will be exploited by
+fast_BK_inf_engine to evaluate long observation sequences in parallel.
+
+For Pearl's algorithm
+- compute_pi
+- compute_lambda_msg
+- CPD_to_CPT (for marginal_family only)
+
+For learning
+- adjustable_CPD
+- update_ess
+- reset_ess
+- maximize_params
+ (The last 3 functions are only needed if the node is adjustable)

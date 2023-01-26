@@ -1,0 +1,34 @@
+A potential is a joint probability distribution on a set of nodes,
+which we call the potential's domain (which is always sorted). If we
+marginalize this distribution, we get Pr(E), the probability of the
+evidence included into the potential, which may be << 1.  If the nodes
+are discrete, the potential can be represented as a table
+(multi-dimensional array). If the nodes are Gaussian, the potential
+can be represented as a quadratic form. If there are both discrete and
+Gaussian nodes, we use a table of quadratic forms. For details on the
+Gaussian case, see README.cgpot.
+
+For discrete potentials, the 'sizes' field specifies the number of
+values each node in the domain can take on. For continuous potentials,
+the 'sizes' field specifies the block-size of each node.
+Often we need to compute the sizes of a subset of the domain,
+as in the following example:
+  domain = [10 20 30], sizes = [6 2 4], subdomain = [20], so subsize = 2.
+The following idiom will work.
+  node_sizes = sparse(1, max(domain));
+  node_sizes(domain) = sizes;
+  sub_sizes = node_sizes(sub_domain)
+
+If some of the nodes are observed, extra complications arise.  We
+handle the discrete and continuous cases differently.  Suppose the
+domain is [X Y], with sizes [6 2], where X is observed to have value x.
+In the discrete case, the potential will have many zeros in it
+(T(X,:) will be 0 for all X <> x), which can be inefficient. Instead,
+we set sizes to [1 2], to indicate that X has only one possible value
+(namely x). For continuous nodes, we set sizes = [0 2], to indicate that X no
+longer appears in the mean vector or covariance matrix (we must avoid
+0s in Sigma, lest it be uninvertible). When a potential is created, we
+assume the sizes of the nodes have been adjusted to include the
+evidence. This is so that the evidence can be incorporated at the
+outset, and thereafter the inference algorithms can ignore it.
+

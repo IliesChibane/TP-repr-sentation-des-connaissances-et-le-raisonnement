@@ -1,0 +1,8 @@
+Graph theory toolbox, written by Kevin Murphy, 1998.
+www.cs.berkeley.edu/~murphyk/Bayes/graph.html
+
+This directory contains some simple graph-related functions,
+such as depth first search and minimal spanning trees.
+Graphs are represented as (sparse) adjacency matrices, although the
+access functions 'parents', 'children', etc. mostly hides this fact.
+The code has not been optimized.

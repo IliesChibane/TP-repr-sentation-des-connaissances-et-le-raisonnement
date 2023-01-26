@@ -1,0 +1,45 @@
+A Gaussian potential can be represented in terms of its
+moment characteristics (mu, Sigma, logp), or in terms of its canonical
+characteristics (g, h, K). Although the moment characteristics are
+more familiar, it turns out that canonical characteristics are
+more convenient for the junction tree algorithm, for the same kinds of
+reasons why backwards inference in an LDS uses the information form of
+the Kalman filter (see Murphy (1998a) for a discussion).
+
+When working with *conditional* Gaussian potentials, the method proposed
+by Lauritzen (1992), and implemented here, requires converting from
+canonical to moment form before marginalizing the discrete variables,
+and converting back from moment to canonical form before
+multiplying/dividing. A new algorithm, due to Lauritzen and Jensen
+(1999), works exclusively in moment form, and
+hence is more numerically stable. It can also handle 0s in the
+covariance matrix, i.e., deterministic relationships between cts
+variables. However, it has not yet been implemented,
+since it requires major changes to the jtree algorithm.
+
+In Murphy (1998b) we extend Lauritzen (1992) to handle
+vector-valued nodes. This means the vectors and matrices become block
+vectors and matrices. This manifests itself in the code as in the
+following example.
+Suppose we have a potential on nodes dom=[3,4,7] with block sizes=[2,1,3].
+Then nodes 3 and 7 correspond to blocks 1,3 which correspond to indices 1,2,4,5,6.
+>> find_equiv_posns([3 7], dom)=[1,3]
+>> block([1,3],blocks)=[1,2,4,5,6].
+
+For more details, see
+
+- "Filtering and Smoothing in Linear Dynamical Systems using the Junction Tree Algorithm",
+   K. Murphy, 1998a. UCB Tech Report.
+
+- "Inference and learning in hybrid Bayesian networks",
+   K. Murphy. UCB Technical Report CSD-98-990, 1998b.
+
+- "Propagation of probabilities, means and variances in mixed
+  graphical association models", S. L. Lauritzen, 1992, JASA 87(420):1098--1108.
+
+- "Causal probabilistic networks with both discrete and continuous variables",
+  K. G. Olesen, 1993. PAMI 3(15). This discusses implementation details.
+
+- "Stable local computation with Conditional Gaussian distributions",
+  S. Lauritzen and F. Jensen, 1999. Univ. Aalborg Tech Report R-99-2014.
+  www.math.auc.dk/research/Reports.html.

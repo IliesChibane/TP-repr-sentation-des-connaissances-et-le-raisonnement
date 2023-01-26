@@ -1,0 +1,10 @@
+This directory contains utility functions for drawing
+small directed or undirected networks.
+
+Most of the code was written by Ali Taylan Cemgil,
+SNN - University of Nijmegen, Department of Medical Physics and Biophysics
+e-mail : cemgil@mbfys.kun.nl, 13-Apr-2000
+
+The functions 'mkdot' and 'plotgraph', written by Kevin Murphy, are
+wrappers to dotty, an excellent graph layout program written in C.
+See http://www.research.att.com/sw/tools/graphviz for details.
